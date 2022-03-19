@@ -1,0 +1,202 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.page{
+    background-color: rgb(248, 246, 246);
+}
+
+.box{
+    background-color: white;
+    width: 50%;
+    box-sizing: border-box;
+    border: 2px solid white;
+    border-radius: 10px;
+}
+
+.shapeLog{
+    width: 100px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.shapeSig{
+    border: 1px solid #FF2325;
+    background-color: #FF2325;
+    border-radius: 7px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.shapeSig:hover{
+    text-decoration: none;
+    color: white;
+    width: 100%;
+}
+
+.pStyle{
+    text-decoration: none;
+    color: black;
+}
+
+.pStyle:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.fStyle{
+    border: 1px solid rgb(62, 132, 238);
+    background-color: rgb(62, 132, 238);
+    border-radius: 7px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: white;
+    width: 100%;
+    box-sizing: border-box;
+    
+}
+
+
+.fStyle:hover{
+    text-decoration: none;
+    color: blue;
+    
+}
+
+.dont a{
+    text-decoration: none;
+    color: black;
+}
+
+
+.dont a:hover{
+    text-decoration: none;
+    color: black;
+}
+
+.create a{
+    text-decoration: none;
+    color: rgb(23, 147, 230);
+}
+
+.create a:hover{
+    text-decoration: none;
+    color: rgb(23, 147, 230);
+}
+
+
+.shape{
+    border-radius: 70px;
+}
+
+.shape1{
+    margin-left: 5px ;
+    border: 1px solid #FF2325;
+    background-color: #fd7d7f;
+    border-radius: 10px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: red;
+}
+.shape1:hover{
+    border: 1px solid #FF2325;
+    background-color: #f79798;
+    border-radius: 10px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: red;
+}
+
+.txt{
+    color: #FF2325;
+}
+
+.txt1{
+    color: rgb(71, 70, 70);
+    font-weight: 500;
+}
+
+.question{
+    border: 3px solid rgb(102, 78, 56);
+    border-radius: 10px;
+    position: relative;
+}
+
+.Qbox{
+    margin: 0 10% 0px 10%;
+}
+
+.shape2{
+    margin-left: 5px ;
+    border: 1px solid rgb(102, 78, 56);
+    background-color: rgb(102, 78, 56);
+    border-radius: 10px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: white;
+}
+.shape2:hover{
+    border: 1px solid rgb(102, 78, 56);
+    background-color: rgb(102, 78, 56);
+    border-radius: 10px;
+    padding: 11px 23px;
+    text-decoration: none;
+    color: white;
+}
+
+.timer{
+    position: absolute;
+    top: 4%;
+    left: 80%;
+}
+
+.clStyle{
+    font-size: 20px;
+    color: rgb(67, 207, 67);
+}
+
+.div1 {
+    width: 100px;
+    height: 50px;
+    background-color: red;
+    font-weight: bold;
+    position: relative;
+    animation: mymove 2s;
+}
+
+
+@keyframes mymove {
+    from {left: -200px;}
+    to {left: 0px;}
+}
+
+.congratulation{
+    background-color: rgb(216, 213, 213);
+    border: 2px solid rgb(102, 78, 56);
+    border-radius: 10px;
+}
+
+.congratulation1{
+    background-color: rgba(245, 205, 43, 0.707);
+    border: 2px solid rgb(140, 138, 136);
+    border-radius: 10px;
+}
+.vs{
+    border: 5px solid rgb(102, 78, 56);
+    border-radius: 20px;
+    box-sizing: border-box;
+    width: 50%;
+    padding: 40px;
+    background-color: rgb(248, 244, 244);
+}
+
+.VS{
+    font-size: 40PX;
+}
+
+.VS1{
+    color: red;
+}

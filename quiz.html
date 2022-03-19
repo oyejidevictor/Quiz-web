@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0 shrink-to-fit=no">
+
+    <title>VSPHERE QUIZ</title>
+    <!-- Main css -->
+    <link rel="stylesheet" href="css/quiz.css">
+    <!-- fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css" />
+    <link rel="stylesheet" href="bootstrap5/css/bootstrap.css">
+    
+
+</head>
+
+<body>
+
+    <div class="d-flex flex-wrap flex-lg-colomn">
+        <div class="mx-2 flex-fill">
+            <img src="img/images__5_-removebg-preview.png" alt="" class="img-fluid" width="70px" height="50px">
+        </div>
+        <div class="mt-2 mr-4 float-right">
+            <img src="img/victor.png" alt="" class="img-fluid shape" width="50px" height="50px">
+            <a href="#" class="d-inline shape1"><strong>Sign out</strong></a>
+        </div>
+    </div>
+
+    <div>
+        <h3 class="text-center">Hi, <span class="txt">Victor</span></h3>
+        <p class="text-center txt1 mb-4">ASSESSMENT ID: SH-IT-0099798</p>
+    </div>
+
+    <!-- Signed in -->
+    <div class="d-flex justify-content-center mt-5" id="info">
+        <div class="welcome text-center vs">
+            <h3>WELCOME TO <span class="VS">V</span><span class="VS1">SPHERE</span> QUIZ</h3>
+            <h6>INTELLIGENCE IS KEY</h6>
+            <span class="VS">&</span>
+            <h6>CHALLENGE MAKES THE DIFFERENCE</h6> <br />
+
+            <button class="shape2" onclick="start()"><strong>Start Now </strong></button>
+        </div>
+    </div>
+
+
+
+    <div class="Qbox d-none" id="wrapper">
+        <div class="question mx-5 px-3">
+            <h6 class="my-3" id="question-info">Question 1/10</h6>
+            <h5 class="mb-4" id="question"></h5>
+            <form action="#" class="mb-4">
+                <div class="form-check" id="options">
+
+                </div>
+            </form>
+            <p class="my-5">
+                <a href="#" class="shape2" onclick="mark()"><b>NEXT</b> <i class="fa fa-angle-right"></i></a>
+            </p>
+            <div class="container mb-3">
+                <div class="progress" id="progress">
+
+                </div>
+            </div>
+            <!-- Quiz Timer -->
+            <div class="timer">
+                <span class="clStyle"><i class="fa fa-clock"></i></span>
+                <span id="timer" class="clStyle"></span>
+            </div>
+        </div>
+
+    </div>
+
+
+
+    <div class="d-flex flex-wrap justify-content-center d-none" id="result">
+    </div>
+
+    <!-- jQuery -->
+    <script src="bootstrap/js/jquery.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="bootstrap/js/bootstrap.js"></script>
+    <script src="bootstrap5/js/bootstrap.js"></script>
+
+    <!-- js -->
+    <script src="js/quiz.js"></script>
+
+    
+
+</body>
+</html>
