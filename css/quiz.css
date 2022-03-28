@@ -161,7 +161,6 @@
 .div1 {
     width: 100px;
     height: 50px;
-    background-color: red;
     font-weight: bold;
     position: relative;
     animation: mymove 2s;
@@ -180,10 +179,18 @@
 }
 
 .congratulation1{
+    margin-top: 3px;
     background-color: rgba(245, 205, 43, 0.707);
     border: 2px solid rgb(140, 138, 136);
     border-radius: 10px;
 }
+
+.congratulationF{
+    width: 100%;
+    border: 2px solid rgb(102, 78, 56);
+    border-radius: 10px;
+}
+
 .vs{
     border: 5px solid rgb(102, 78, 56);
     border-radius: 20px;
@@ -199,4 +206,9 @@
 
 .VS1{
     color: red;
+}
+
+.note {
+    color: rgb(72, 4, 4);
+    font-weight: 500;
 }

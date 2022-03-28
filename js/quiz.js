@@ -1,14 +1,12 @@
-// function warning() {
-//     alert(" PLEASE NOTE THAT YOU HAVE JUST 3MINS. \n RELOADING THE PAGE WILL FETCH YOU ZER0. \n \n SUCCESS");
-//     document.getElementById("q").style.display="block";
-// }
 
 const duration = 5;
 let questionIndex = 0;
 let question;
 let interval;
 let passMark = 70
-let score = 0
+let score = 0;
+let currentTime = 0;
+
 const questions = [
 
     {
@@ -83,18 +81,33 @@ const questions = [
 
 ];
 
+function restart() {
+    currentTime = 0;
+
+    document.querySelector('#caution').classList.remove('d-none');  
+    document.querySelector('#info').classList.remove('d-none');
+    document.querySelector('#result').classList.add('d-none');
+    document.querySelector('#info').classList.add('d-block');  
+    document.querySelector('#caution').classList.add('d-block');  
+}
+
 function start() {
     document.querySelector('#wrapper').classList.remove('d-none')
     let resultElem = document.querySelector('#result')
     let infoElem = document.querySelector('#info')
+    let cautionElem = document.querySelector('#caution')
     resultElem.classList.add('d-none');
     infoElem.classList.add('d-none');
-    renderProgress()
+    cautionElem.classList.add('d-none');
+    renderProgress();
     renderQuestion();
 }
 
-function timer() {
-    let timeLeft = duration;
+function timer(additonalT) {
+    
+    let timeLeft = additonalT + duration;
+    // console.log("XX"+xx);
+    // console.log("Timeleft"+timeLeft);
     interval = setInterval( function() {
         document.querySelector('#timer').innerHTML = timeLeft;
         if (timeLeft == 0) {
@@ -103,14 +116,18 @@ function timer() {
             } else
                 displayResult()
         }
+    
         timeLeft--;
+        currentTime=timeLeft;
+        // console.log(timeLeft);
     }, 1000)
+    // console.log(timeLeft);
 }
 
 function renderQuestion() {
     if (interval != undefined) clearInterval(interval)
 
-    timer()
+    timer(currentTime)
     document.querySelector(`#progress-${questionIndex}`).classList.remove('bg-secondary')
     document.querySelector(`#progress-${questionIndex}`).classList.add('bg-primary')
     document.querySelector("#question-info").innerHTML = `Question ${questionIndex + 1}/${questions.length}`
@@ -130,18 +147,20 @@ function renderQuestion() {
 }
 
 function displayResult() {
-    document.querySelector('#wrapper').style.display = 'none'
+    document.querySelector('#wrapper').classList.add("d-none")
     let resultElem = document.querySelector('#result')
     resultElem.classList.remove('d-none');
     let percentageScore = score * 100 / questions.length
     resultElem.innerHTML =
-    // <img class="congratulation" src="img/cup.png" alt="Card image">
-
         `
-    <div class="card div1 text-center" style="width:35%">
-            <div class="congratulation1">
+    <div class="div1 text-center mt-3" style="width:45vh">
+        <span>${percentageScore >= passMark ? `<img class="congratulationF" src="img/cup.png" alt="Card image"`  : `<img class="congratulationF" src="img/failed.jpeg" alt="Card image"`}></span>
+            <div class="congratulation1 mt-3">
                 <h3>${percentageScore >= passMark ? "Congratulations" : "Oops..."}</h3>
-                <p>${ percentageScore >= passMark ? "You did a great job in the test!" : "Failed! You may retake the test"} </p>
+                <p>${ percentageScore >= passMark ? "You did a great job in the test!" : "Failed! You may retake the test"}</p>
+                <div class="mt-2">
+                    <button class="shape2" onclick="restart()"><strong>RESTART</strong></button>
+                </div>
             </div>
         </div>
     `
@@ -163,7 +182,9 @@ function mark() {
     }
     if (questionIndex < questions.length) {
         renderQuestion()
-    }else{
+    }
+        // console.log("current"+currentTime);
+    else{
         displayResult()
     }
 }
@@ -180,24 +201,3 @@ function renderProgress() {
     `
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-// var count = 120;
-// var interval = setInterval(function(){
-//     document.getElementById("dTimer").innerHTML = count;
-//     count--;
-//     if(count === 0){
-//         clearInterval(interval);
-//         document.getElementById("dTimer").innerHTML = "done";
-//     }
-// }, 1000);
-
