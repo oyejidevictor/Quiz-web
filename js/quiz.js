@@ -1,4 +1,35 @@
 
+document.querySelector('#signed-in').classList.add('d-none');  
+
+
+function checkInput() {    
+    var inputText, inputPwd;
+    inputText = document.getElementById("text").value;
+    inputPwd = document.getElementById("pwd").value;
+    if(inputText == "" && inputPwd == ""){
+        document.querySelector('#errorT').innerHTML = "Required";
+        document.querySelector('#errorP').innerHTML = "Required";
+    }
+    else if ( inputPwd != "12345" ){
+        document.querySelector('#errorP').innerHTML = "Incorrect Password";
+    }
+    else if( inputPwd == "12345" && inputText != "") {
+        document.querySelector('#signed-Out').classList.add('d-none');  
+        document.querySelector('#signed-in').classList.remove('d-none'); 
+    }
+
+    var testCode = Math.floor(Math.random() *1000000);
+
+    document.querySelector('#ID').innerHTML=
+        `<h3 class="text-center">Hi, <span class="txt">${inputText}</span></h3>
+        <p class="text-center txt1">ASSESSMENT ID: SH-IT-00${testCode}</p>
+        `
+}
+
+function signOut() {
+    location.reload();
+}
+
 const duration = 5;
 let questionIndex = 0;
 let question;
